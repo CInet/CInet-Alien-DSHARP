@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/taboege/dsharp
 	branch = master
-	commit = e5a00414489f56881f28a73f836483579ba156bc
-	parent = 632bbe4b722cc9f44e436af0f937d9fba0ca5767
+	commit = f8ae1c41741d325afa3fe407ebfffc5c5638cc31
+	parent = e61a095d18c5feb904a14ce702ad823f532858fd
 	method = merge
 	cmdver = 0.4.0

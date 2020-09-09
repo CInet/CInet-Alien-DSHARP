@@ -10,6 +10,8 @@
 #include "MainSolver/MainSolver.h"
 #include "Basics.h"
 
+#define VERSION "1.0.0.b"
+
 using namespace std;
 
 CMainSolver theSolver;
@@ -127,6 +129,10 @@ int main(int argc, char *argv[])
 	{
 		if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0)
 			return usage();
+		if (strcmp(argv[1], "-V") == 0) {
+			toSTDOUT(VERSION << endl);
+			return 0;
+		}
 		if (strcmp(argv[i], "-noNCB") == 0)
 			CSolverConf::doNonChronBackTracking = false;
 		if (strcmp(argv[i], "-noCC") == 0)
