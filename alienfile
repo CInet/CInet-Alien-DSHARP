@@ -1,0 +1,32 @@
+use alienfile;
+use autodie;
+
+use Path::Tiny;
+use IPC::Run3;
+
+configure {
+    requires 'Path::Tiny';
+    requires 'IPC::Run3';
+};
+
+share {
+    start_url 'dsharp/';
+    plugin 'Fetch::LocalDir';
+    plugin 'Extract::Directory';
+
+    build [
+        '%{make}',
+        'install -t %{.install.prefix} dsharp',
+    ];
+};
+
+gather sub {
+    my $build = shift;
+    my $exename = $build->runtime_prop->{exename} =
+        'dsharp';
+
+    my $exe = path($build->install_prop->{prefix}, $exename);
+    run3 [$exe, '-V'], \undef, \my $stdout;
+    $stdout =~ /^([0-9.a-z]+)$/;
+    $build->runtime_prop->{version} = $1;
+};
