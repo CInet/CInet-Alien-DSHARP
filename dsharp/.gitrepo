@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/taboege/dsharp
+	branch = master
+	commit = e5a00414489f56881f28a73f836483579ba156bc
+	parent = 632bbe4b722cc9f44e436af0f937d9fba0ca5767
+	method = merge
+	cmdver = 0.4.0

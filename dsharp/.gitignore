@@ -1,0 +1,4 @@
+dsharp
+*.o
+tags
+include
